@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.text.DateFormat;
+
 import java.util.Date;
 import java.util.List;
 
@@ -20,8 +20,6 @@ public class UserController {
 
     @Autowired
   private  UserService userService;
-
-
     @PostMapping("/signup")
     public ResponseEntity<User> saveUser(@RequestBody @Valid UserRequest userRequest){
         return new ResponseEntity<>(userService.saveUser(userRequest), HttpStatus.CREATED);
@@ -42,6 +40,11 @@ public class UserController {
         System.out.println(id);
         System.out.println(new Date().toString());
         return ResponseEntity.status(HttpStatus.OK).body(userService.getUser(id));
+    }
+    @GetMapping("/good-morning")
+    public String greeting(){
+
+        return "Hi Mairaj. i am from new method controller";
     }
 
 }
