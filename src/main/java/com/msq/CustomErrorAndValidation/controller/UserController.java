@@ -44,7 +44,7 @@ public class UserController {
     @GetMapping("/good-morning")
     public String greeting(){
 
-        return "Hi Mairaj. i am from new  controller method";
+        return "Hi Mairaj. i am from new  controller method tttttttttttt";
     }
 
 }
